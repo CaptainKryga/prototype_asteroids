@@ -31,7 +31,7 @@
         {
             _status = id == 0 ? GameTypes.ELevel.opened : GameTypes.ELevel.closed;
 
-            _size = UnityEngine.Random.Range(.5f, 5);
+            _size = UnityEngine.Random.Range(.5f, 4);
             _spawnDelay = UnityEngine.Random.Range(.5f, 2);
             _speed = UnityEngine.Random.Range(.5f, 10);
             _lifeCount = UnityEngine.Random.Range(1, 4);

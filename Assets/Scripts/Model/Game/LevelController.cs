@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using Model.Game.Entityes;
+using Model.Game.Entities;
 using Model.Game.Factories;
 using UnityEngine;
 
@@ -13,7 +13,6 @@ namespace Model.Game
         [SerializeField] private Ship _ship;
 
         private Level _levelActual;
-        [SerializeField] private float _distance;
         [SerializeField] private bool _isLoop;
         
         private void OnEnable()

@@ -3,15 +3,14 @@ using Controller;
 using Model.Game.Factories;
 using UnityEngine;
 
-namespace Model.Game.Entityes
+namespace Model.Game.Entities
 {
     public class Ship : Entity
     {
         [SerializeField] private CustomInput _customInput;
-        
-        public Action<int> UpdateState_Action;
-
         [SerializeField] private FactoryBullets _factoryBullets;
+
+        public Action<int> UpdateState_Action;
 
         public void Init(Vector3 velocity)
         {

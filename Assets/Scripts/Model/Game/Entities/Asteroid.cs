@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Model.Game.Entityes
+namespace Model.Game.Entities
 {
     public class Asteroid : Entity
     {
@@ -17,7 +17,7 @@ namespace Model.Game.Entityes
         protected override void OnTriggerEnter2D(Collider2D other)
         {
             if (other.GetComponent<Entity>())
-                Death();
+                LifeCount--;
         }
 
         protected override void Death()

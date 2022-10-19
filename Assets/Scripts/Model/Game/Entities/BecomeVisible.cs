@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Model.Game
+namespace Model.Game.Entities
 {
     public class BecomeVisible : MonoBehaviour
     {

@@ -22,8 +22,6 @@ namespace Model
         public void StartGame(int level)
         {
             _levelController.StartGame(level);
-            //levelController
-            //view
         }
 
         public void EndGame(bool isWin, Level[] levels)

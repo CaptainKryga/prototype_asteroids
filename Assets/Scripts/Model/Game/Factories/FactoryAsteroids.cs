@@ -1,4 +1,4 @@
-﻿using Model.Game.Entityes;
+﻿using Model.Game.Entities;
 using UnityEngine;
 
 namespace Model.Game.Factories
