@@ -7,20 +7,29 @@ namespace View
     public class ViewController : MonoBehaviour
     {
         [SerializeField] private GlobalController _global;
+        [SerializeField] private UIMenu _menu;
+        [SerializeField] private UIGame _game;
 
+        public void SetLevel(int level)
+        {
+            _global.StartGame(level);
+            _game.UpdateGameState(true);
+        }
+        
         public void UpdateMap(Level[] levels)
         {
-            //map points
+            _menu.UpdateMap(levels);
         }
 
         public void UpdateShipState()
         {
-            //life
+            _game.UpdateShipState();
         }
 
-        public void UpdateGameState()
+        public void UpdateGameState(bool isWin)
         {
-            //win?
+            _menu.UpdateGameState(isWin);
+            _game.UpdateGameState(false);
         }
     }
     
