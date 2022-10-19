@@ -5,7 +5,7 @@ namespace View
     public class UIGame : MonoBehaviour
     {
         [SerializeField] private GameObject panelShip;
-        public void UpdateShipState()
+        public void UpdateShipState(int lifeCount)
         {
             
         }

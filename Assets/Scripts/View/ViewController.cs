@@ -21,9 +21,9 @@ namespace View
             _menu.UpdateMap(levels);
         }
 
-        public void UpdateShipState()
+        public void UpdateShipState(int lifeCount)
         {
-            _game.UpdateShipState();
+            _game.UpdateShipState(lifeCount);
         }
 
         public void UpdateGameState(bool isWin)
