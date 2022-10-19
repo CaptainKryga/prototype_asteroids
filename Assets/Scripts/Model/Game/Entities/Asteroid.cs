@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Model.Game.Entities
 {
@@ -17,7 +18,12 @@ namespace Model.Game.Entities
         protected override void OnTriggerEnter2D(Collider2D other)
         {
             if (other.GetComponent<Entity>())
-                LifeCount--;
+            {
+                if (other.GetComponent<Ship>())
+                    LifeCount -= Int32.MaxValue;
+                else
+                    LifeCount--;
+            }
         }
 
         protected override void Death()
