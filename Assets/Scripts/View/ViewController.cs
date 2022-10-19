@@ -10,10 +10,28 @@ namespace View
         [SerializeField] private UIMenu _menu;
         [SerializeField] private UIGame _game;
 
+        private int _saveLevel;
+        
+        public void Restart()
+        {
+            _menu.Restart();
+            _game.Restart();
+        }
+        
         public void SetLevel(int level)
         {
+            _saveLevel = level;
+            
             _global.StartGame(level);
-            _game.UpdateGameState(true);
+            _game.UpdatePanelShipState(true);
+            _menu.UpdateMapState(false);
+        }
+        
+        public void RestartLevel()
+        {
+            _global.StartGame(_saveLevel);
+            _game.UpdatePanelShipState(true);
+            _menu.UpdateMapState(false);
         }
         
         public void UpdateMap(Level[] levels)
@@ -26,10 +44,10 @@ namespace View
             _game.UpdateShipState(lifeCount);
         }
 
-        public void UpdateGameState(bool isWin)
+        public void UpdateEndGameState(bool isWin)
         {
-            _menu.UpdateGameState(isWin);
-            _game.UpdateGameState(false);
+            _game.UpdatePanelShipState(false);
+            _game.UpdateEndGameState(isWin);
         }
     }
     

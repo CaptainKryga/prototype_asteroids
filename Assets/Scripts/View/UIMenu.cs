@@ -12,6 +12,11 @@ namespace View
         [SerializeField] private GameObject panelMap;
         [SerializeField] private Button[] mapPoints;
 
+        public void Restart()
+        {
+            UpdateMapState(true);
+        }
+        
         public void UpdateMap(Level[] levels)
         {
             for (int x = 0; x < levels.Length && x < mapPoints.Length; x++)
@@ -22,9 +27,9 @@ namespace View
             }
         }
         
-        public void UpdateGameState(bool isWin)
+        public void UpdateMapState(bool isVisible)
         {
-            panelMap.SetActive(true);
+            panelMap.SetActive(isVisible);
         }
 
         public void OnClick_SetLevel(int level)
