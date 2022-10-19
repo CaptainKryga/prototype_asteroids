@@ -1,5 +1,6 @@
 ﻿using System;
 using Controller;
+using Model.Game.Factories;
 using UnityEngine;
 
 namespace Model.Game.Entityes
@@ -10,7 +11,7 @@ namespace Model.Game.Entityes
         
         public Action<int> UpdateState_Action;
 
-        [SerializeField] private Bullet _prefabBullet;
+        [SerializeField] private FactoryBullets _factoryBullets;
 
         public void Init(Vector3 velocity)
         {
@@ -55,8 +56,7 @@ namespace Model.Game.Entityes
 
         private void Attack(Vector2 mouse)
         {
-            Bullet bullet = Instantiate(_prefabBullet, transform.position, Quaternion.identity);
-            bullet.Init(Vector3.up);
+            _factoryBullets.Create(null);
         }
     }
 }

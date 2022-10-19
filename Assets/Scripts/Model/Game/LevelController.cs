@@ -45,14 +45,13 @@ namespace Model.Game
         private void UpdateShipState(int lifeCount)
         {
             if (lifeCount <= 0)
-            {
-                EndGame();
-                _isLoop = false;
-            }
+                EndGame(false);
         }
 
-        private void EndGame()
+        private void EndGame(bool isWin)
         {
+            _isLoop = false;
+            
             _levelActual.Status = GameTypes.ELevel.completed;
             
             for (int x = 0; x < _levels.Length; x++)
@@ -62,16 +61,30 @@ namespace Model.Game
                     break;
                 }
             
-            _model.EndGame(true, _levels);
+            _model.EndGame(isWin, _levels);
         }
 
         private IEnumerator GameLoop()
         {
+            float delay = _levelActual.SpawnDelay;
+            float distance = 0;
             while (_isLoop)
             {
-                _factoryAsteroids.Create(_levelActual);
-                Debug.Log("respawn");
-                yield return new WaitForSeconds(1);
+                delay -= Time.deltaTime;
+                distance += Time.deltaTime;
+                
+                if (delay < 0)
+                {
+                    _factoryAsteroids.Create(_levelActual);
+                    delay = _levelActual.SpawnDelay;
+                }
+
+                if (distance >= _levelActual.Distance)
+                {
+                    EndGame(true);
+                }
+                    
+                yield return new WaitForEndOfFrame();
             }
             yield break;
         }
