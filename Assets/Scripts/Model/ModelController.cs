@@ -14,6 +14,7 @@ namespace Model
         public void Init()
         {
             Level[] levels = _loadSave.Load();
+            _view.Restart();
             _view.UpdateMap(levels);
             _levelController.Init(levels);
         }
@@ -29,7 +30,7 @@ namespace Model
         {
             _loadSave.Save(levels);
             _view.UpdateMap(levels);
-            _view.UpdateGameState(isWin);
+            _view.UpdateEndGameState(isWin);
 
         }
 

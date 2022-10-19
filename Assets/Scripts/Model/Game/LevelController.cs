@@ -44,6 +44,8 @@ namespace Model.Game
 
         private void UpdateShipState(int lifeCount)
         {
+            _model.UpdateShipState(lifeCount);
+            
             if (lifeCount <= 0)
                 EndGame(false);
         }
@@ -51,6 +53,8 @@ namespace Model.Game
         private void EndGame(bool isWin)
         {
             _isLoop = false;
+            if (isWin)
+                _ship.WinUnSubscribe();
             
             _levelActual.Status = GameTypes.ELevel.completed;
             

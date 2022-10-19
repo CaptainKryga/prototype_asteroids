@@ -22,6 +22,8 @@ namespace Model.Game.Entityes
             
             _customInput.UpdateWASD_Action += Move;
             _customInput.UpdateMouseClick_Action += Attack;
+            
+            UpdateState_Action?.Invoke(LifeCount);
         }
 
         protected override void OnTriggerEnter2D(Collider2D other)
@@ -36,8 +38,15 @@ namespace Model.Game.Entityes
         protected override void Death()
         {
             _customInput.UpdateWASD_Action -= Move;
-            _customInput.UpdateMouseClick_Action -= Attack;
+            _customInput.UpdateMouseClick_Action -= Attack;        
             Debug.Log("Death");
+        }
+
+        public void WinUnSubscribe()
+        {
+            _customInput.UpdateWASD_Action -= Move;
+            _customInput.UpdateMouseClick_Action -= Attack;
+            Debug.Log("Win");
         }
 
         private void Move(Vector2 vec)
