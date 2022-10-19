@@ -7,7 +7,6 @@ namespace View
     {
         [SerializeField] private ViewController _view;
         
-        [SerializeField] private GameObject _panelShip;
         [SerializeField] private TMP_Text _textLifeCount;
         
         [SerializeField] private GameObject _panelEndGame;
@@ -15,7 +14,6 @@ namespace View
 
         public void Restart()
         {
-            _panelShip.SetActive(false);
             _panelEndGame.SetActive(false);
         }
         
@@ -24,14 +22,9 @@ namespace View
             _textLifeCount.text = "Life's: " + lifeCount;
         }
 
-        public void UpdatePanelShipState(bool isVisible)
-        {
-            _panelShip.SetActive(isVisible);
-            _panelEndGame.SetActive(!isVisible);
-        }
-        
         public void UpdateEndGameState(bool isWin)
         {
+            _panelEndGame.SetActive(true);
             _textEndGame.text = isWin ? "Win" : "Defeat";
         }
         

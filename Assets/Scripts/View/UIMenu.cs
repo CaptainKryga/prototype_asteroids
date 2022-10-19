@@ -9,8 +9,8 @@ namespace View
     {
         [SerializeField] private ViewController _view;
 
-        [SerializeField] private GameObject panelMap;
-        [SerializeField] private Button[] mapPoints;
+        [SerializeField] private GameObject _panelMap;
+        [SerializeField] private Button[] _mapPoints;
 
         public void Restart()
         {
@@ -19,23 +19,23 @@ namespace View
         
         public void UpdateMap(Level[] levels)
         {
-            for (int x = 0; x < levels.Length && x < mapPoints.Length; x++)
+            for (int x = 0; x < levels.Length && x < _mapPoints.Length; x++)
             {
-                mapPoints[x].interactable = levels[x].Status != GameTypes.ELevel.closed;
-                mapPoints[x].image.color = levels[x].Status == GameTypes.ELevel.closed ? Color.red :
+                _mapPoints[x].interactable = levels[x].Status != GameTypes.ELevel.closed;
+                _mapPoints[x].image.color = levels[x].Status == GameTypes.ELevel.closed ? Color.red :
                     levels[x].Status == GameTypes.ELevel.opened ? Color.white : Color.green;
             }
         }
         
         public void UpdateMapState(bool isVisible)
         {
-            panelMap.SetActive(isVisible);
+            _panelMap.SetActive(isVisible);
         }
 
         public void OnClick_SetLevel(int level)
         {
             _view.SetLevel(level);
-            panelMap.SetActive(false);
+            _panelMap.SetActive(false);
         }
     }
 }

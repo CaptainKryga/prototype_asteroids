@@ -21,16 +21,13 @@ namespace View
         public void SetLevel(int level)
         {
             _saveLevel = level;
-            
-            _global.StartGame(level);
-            _game.UpdatePanelShipState(true);
-            _menu.UpdateMapState(false);
+            RestartLevel();
         }
         
         public void RestartLevel()
         {
             _global.StartGame(_saveLevel);
-            _game.UpdatePanelShipState(true);
+            _game.Restart();
             _menu.UpdateMapState(false);
         }
         
@@ -46,7 +43,6 @@ namespace View
 
         public void UpdateEndGameState(bool isWin)
         {
-            _game.UpdatePanelShipState(false);
             _game.UpdateEndGameState(isWin);
         }
     }
