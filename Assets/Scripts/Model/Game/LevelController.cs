@@ -54,18 +54,21 @@ namespace Model.Game
             _isLoop = false;
             
             _factoryAsteroids.Clear();
-            
+
             if (isWin)
-                _ship.WinUnSubscribe();
-            
-            _levelActual.Status = GameTypes.ELevel.completed;
-            
-            for (int x = 0; x < _levels.Length; x++)
-                if (_levels[x] == _levelActual && x + 1 < _levels.Length)
+            {
+                _levelActual.Status = GameTypes.ELevel.completed;
+
+                for (int x = 0; x < _levels.Length; x++)
                 {
-                    _levels[x + 1].Status = GameTypes.ELevel.opened;
-                    break;
+                    if (_levels[x] == _levelActual && x + 1 < _levels.Length)
+                    {
+                        _levels[x + 1].Status = GameTypes.ELevel.opened;
+                        break;
+                    }
                 }
+                _ship.WinUnSubscribe();
+            }
             
             _model.EndGame(isWin, _levels);
         }
