@@ -1,5 +1,4 @@
-﻿using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Model
 {
@@ -21,10 +20,8 @@ namespace Model
                 }
             }
         }
-
-        public abstract void Init(Vector3 velocity);
         
-        protected abstract void OnCollisionEnter2D(Collision2D other);
+        protected abstract void OnTriggerEnter2D(Collider2D other);
 
         protected abstract void Death();
     }

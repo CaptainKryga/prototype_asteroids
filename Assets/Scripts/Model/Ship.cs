@@ -10,7 +10,7 @@ namespace Model
         
         public Action<int> UpdateState_Action;
 
-        public override void Init(Vector3 velocity)
+        public void Init(Vector3 velocity)
         {
             transform.position = Respawn.position;
             Rb.velocity = velocity;
@@ -19,13 +19,11 @@ namespace Model
             
             _customInput.UpdateWASD_Action += Move;
             _customInput.UpdateMouseClick_Action += Attack;
-            
-            Debug.Log("Init");
         }
 
-        protected override void OnCollisionEnter2D(Collision2D other)
+        protected override void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.GetComponent<Entity>())
+            if (other.GetComponent<Entity>())
             {
                 LifeCount--;
                 UpdateState_Action?.Invoke(LifeCount);

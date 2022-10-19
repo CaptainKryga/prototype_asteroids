@@ -26,14 +26,14 @@ namespace Model
         public void EndGame(bool isWin, Level[] levels)
         {
             _loadSave.Save(levels);
+            _view.UpdateMap(levels);
+            _view.UpdateGameState(isWin);
 
-            //save
-            //view
         }
 
         public void UpdateShipState(int lifeCount)
         {
-            //view
+            _view.UpdateShipState(lifeCount);
         }
     }
 }

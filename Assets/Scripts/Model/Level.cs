@@ -1,8 +1,5 @@
-﻿using System;
-
-namespace Model
+﻿namespace Model
 {
-    [Serializable]
     public class Level
     {
         private GameTypes.ELevel _status;

@@ -1,15 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Model
 {
     public class LevelController : MonoBehaviour
     {
         [SerializeField] private ModelController _model;
-        [SerializeField] private Level[] _levels;
+        private Level[] _levels;
         [SerializeField] private FactoryAsteroids _factoryAsteroids;
         [SerializeField] private Ship _ship;
 
-        [SerializeField] private Level _levelActual;
+        private Level _levelActual;
         [SerializeField] private float _distance;
         [SerializeField] private bool _isLoop;
         
@@ -34,13 +35,18 @@ namespace Model
 
             _ship.Init(Vector3.zero);
 
-            GameLoop();
+            _isLoop = true;
+
+            StartCoroutine(GameLoop());
         }
 
         private void UpdateShipState(int lifeCount)
         {
             if (lifeCount <= 0)
+            {
                 EndGame();
+                _isLoop = false;
+            }
         }
 
         private void EndGame()
@@ -57,9 +63,15 @@ namespace Model
             _model.EndGame(true, _levels);
         }
 
-        private void GameLoop()
+        private IEnumerator GameLoop()
         {
-            // _factoryAsteroids.CreateAsteroid();
+            while (_isLoop)
+            {
+                _factoryAsteroids.Create(_levelActual);
+                Debug.Log("respawn");
+                yield return new WaitForSeconds(1);
+            }
+            yield break;
         }
     }
 }
