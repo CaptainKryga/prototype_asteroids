@@ -53,6 +53,9 @@ namespace Model.Game
         private void EndGame(bool isWin)
         {
             _isLoop = false;
+            
+            _factoryAsteroids.Clear();
+            
             if (isWin)
                 _ship.WinUnSubscribe();
             

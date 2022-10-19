@@ -35,7 +35,7 @@
             _spawnDelay = UnityEngine.Random.Range(.5f, 2);
             _speed = UnityEngine.Random.Range(.5f, 10);
             _lifeCount = UnityEngine.Random.Range(1, 4);
-            _distance = UnityEngine.Random.Range(30, 100);
+            _distance = UnityEngine.Random.Range(10, 100);
         }
     }
 }

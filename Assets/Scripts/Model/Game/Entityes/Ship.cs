@@ -37,13 +37,17 @@ namespace Model.Game.Entityes
 
         protected override void Death()
         {
+            _factoryBullets.Clear();
+            
             _customInput.UpdateWASD_Action -= Move;
-            _customInput.UpdateMouseClick_Action -= Attack;        
+            _customInput.UpdateMouseClick_Action -= Attack;
             Debug.Log("Death");
         }
 
         public void WinUnSubscribe()
         {
+            _factoryBullets.Clear();
+
             _customInput.UpdateWASD_Action -= Move;
             _customInput.UpdateMouseClick_Action -= Attack;
             Debug.Log("Win");

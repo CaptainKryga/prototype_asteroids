@@ -10,6 +10,8 @@ namespace Model.Game.Factories
             Vector3 newPos = Respawn.position;
             Bullet go = Instantiate(Prefab, newPos, Quaternion.identity).GetComponent<Bullet>();
             go.Init(Vector3.up);
+            
+            List.Add(go.gameObject);
         }
     }
 }
