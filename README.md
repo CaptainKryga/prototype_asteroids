@@ -1,5 +1,7 @@
 # prototype_asteroids
 
-prototype game spaceship against asteroids from "Mystery Tag"
+prototype game spaceship against asteroids
 
-[UML](https://miro.com/app/board/uXjVPMDwIQ4=/?share_link_id=735990040708)
+Unity ver.2021.3.11f1
+
+project architecture table [UML](https://miro.com/app/board/uXjVPMDwIQ4=/?share_link_id=735990040708)
