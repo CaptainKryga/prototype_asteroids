@@ -200,6 +200,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1070423167}
+  - {fileID: 1361440965}
   m_Father: {fileID: 242113872}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1399,6 +1400,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1361440963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1361440965}
+  - component: {fileID: 1361440964}
+  m_Layer: 0
+  m_Name: FactoryBullets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1361440964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361440963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563e9563b10a41849961b96613a154bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 2110399519425934040, guid: eb2cd5308bd78ff41b959b48556b9830, type: 3}
+  Respawn: {fileID: 1396153586}
+--- !u!4 &1361440965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361440963}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 155437960}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1396153586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6847362828645169971, guid: d3a51044e62440e4b866882b593a2b71, type: 3}
@@ -2338,6 +2385,10 @@ PrefabInstance:
       propertyPath: _prefabBullet
       value: 
       objectReference: {fileID: 636810063477129866, guid: eb2cd5308bd78ff41b959b48556b9830, type: 3}
+    - target: {fileID: 1396153590, guid: d3a51044e62440e4b866882b593a2b71, type: 3}
+      propertyPath: _factoryBullets
+      value: 
+      objectReference: {fileID: 1361440964}
     - target: {fileID: 6847362828645169968, guid: d3a51044e62440e4b866882b593a2b71, type: 3}
       propertyPath: m_Name
       value: Ship
@@ -2388,7 +2439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847362828645169972, guid: d3a51044e62440e4b866882b593a2b71, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3a51044e62440e4b866882b593a2b71, type: 3}
