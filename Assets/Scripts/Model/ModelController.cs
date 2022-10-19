@@ -9,27 +9,24 @@ namespace Model
         [SerializeField] private LoadSave _loadSave;
         [SerializeField] private LevelController _levelController;
 
-        public void Load()
+        public void Init()
         {
             Level[] levels = _loadSave.Load();
             _view.UpdateMap(levels);
-            //saveload
-            //levelController
-        }
-
-        private void Save(Level[] levels)
-        {
-            //saveload
+            _levelController.Init(levels);
         }
 
         public void StartGame(int level)
         {
+            _levelController.StartGame(level);
             //levelController
             //view
         }
 
         public void EndGame(bool isWin, Level[] levels)
         {
+            _loadSave.Save(levels);
+
             //save
             //view
         }

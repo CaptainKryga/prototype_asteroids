@@ -12,7 +12,7 @@ namespace Model
         private int _lifeCount;
         private float _distance;
         
-        public GameTypes.ELevel Status { get => _status; }
+        public GameTypes.ELevel Status { get => _status; set => _status = value; }
         public float Size { get => _size; }
         public float SpawnDelay { get => _spawnDelay; }
         public float Speed { get => _speed; }

@@ -15,7 +15,7 @@ namespace Controller
 
         private void Init()
         {
-            _model.Load();
+            _model.Init();
         }
 
         public void StartGame(int level)
