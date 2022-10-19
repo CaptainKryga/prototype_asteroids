@@ -1,4 +1,5 @@
 ﻿using Model;
+using Model.Game;
 using UnityEngine;
 using UnityEngine.UI;
 

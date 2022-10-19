@@ -2334,6 +2334,10 @@ PrefabInstance:
       propertyPath: _customInput
       value: 
       objectReference: {fileID: 1134525740}
+    - target: {fileID: 1396153590, guid: d3a51044e62440e4b866882b593a2b71, type: 3}
+      propertyPath: _prefabBullet
+      value: 
+      objectReference: {fileID: 636810063477129866, guid: eb2cd5308bd78ff41b959b48556b9830, type: 3}
     - target: {fileID: 6847362828645169968, guid: d3a51044e62440e4b866882b593a2b71, type: 3}
       propertyPath: m_Name
       value: Ship
@@ -2381,6 +2385,10 @@ PrefabInstance:
     - target: {fileID: 6847362828645169971, guid: d3a51044e62440e4b866882b593a2b71, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6847362828645169972, guid: d3a51044e62440e4b866882b593a2b71, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3a51044e62440e4b866882b593a2b71, type: 3}

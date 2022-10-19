@@ -1,7 +1,9 @@
 ﻿using System.Collections;
+using Model.Game.Entityes;
+using Model.Game.Factories;
 using UnityEngine;
 
-namespace Model
+namespace Model.Game
 {
     public class LevelController : MonoBehaviour
     {

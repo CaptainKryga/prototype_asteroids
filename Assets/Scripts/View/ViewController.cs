@@ -1,5 +1,5 @@
 using Controller;
-using Model;
+using Model.Game;
 using UnityEngine;
 
 namespace View

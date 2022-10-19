@@ -1,8 +1,9 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using Model.Game;
 using UnityEngine;
 
-namespace Model
+namespace Model.Save
 {
     public class LoadSave : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Model
+namespace Model.Game.Factories
 {
     public abstract class Factory : MonoBehaviour
     {

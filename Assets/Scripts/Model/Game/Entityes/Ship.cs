@@ -2,13 +2,15 @@
 using Controller;
 using UnityEngine;
 
-namespace Model
+namespace Model.Game.Entityes
 {
     public class Ship : Entity
     {
         [SerializeField] private CustomInput _customInput;
         
         public Action<int> UpdateState_Action;
+
+        [SerializeField] private Bullet _prefabBullet;
 
         public void Init(Vector3 velocity)
         {
@@ -23,7 +25,7 @@ namespace Model
 
         protected override void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.GetComponent<Entity>())
+            if (other.GetComponent<Asteroid>())
             {
                 LifeCount--;
                 UpdateState_Action?.Invoke(LifeCount);
@@ -53,7 +55,8 @@ namespace Model
 
         private void Attack(Vector2 mouse)
         {
-            
+            Bullet bullet = Instantiate(_prefabBullet, transform.position, Quaternion.identity);
+            bullet.Init(Vector3.up);
         }
     }
 }

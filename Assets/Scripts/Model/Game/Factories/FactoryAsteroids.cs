@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Model.Game.Entityes;
+using UnityEngine;
 
-namespace Model
+namespace Model.Game.Factories
 {
     public class FactoryAsteroids : Factory
     {

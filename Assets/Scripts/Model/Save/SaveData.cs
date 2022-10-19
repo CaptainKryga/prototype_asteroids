@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Model
+namespace Model.Save
 {
     [Serializable]
     public class SaveData
