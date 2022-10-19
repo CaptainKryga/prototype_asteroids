@@ -1,3 +1,4 @@
+using System;
 using Model;
 using UnityEngine;
 
@@ -5,11 +6,21 @@ namespace Controller
 {
     public class GlobalController : MonoBehaviour
     {
-        private ModelController _model;
+        [SerializeField] private ModelController _model;
 
-        public void Init()
+        private void Start()
         {
-            
+            Init();
+        }
+
+        private void Init()
+        {
+            _model.Load();
+        }
+
+        public void StartGame(int level)
+        {
+            _model.StartGame(level);
         }
     }
 }

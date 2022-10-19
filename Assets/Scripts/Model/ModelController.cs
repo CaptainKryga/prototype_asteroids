@@ -11,6 +11,8 @@ namespace Model
 
         public void Load()
         {
+            Level[] levels = _loadSave.Load();
+            _view.UpdateMap(levels);
             //saveload
             //levelController
         }
